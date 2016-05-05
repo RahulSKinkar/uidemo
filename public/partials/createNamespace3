@@ -1,0 +1,76 @@
+<div flex ng-controller="createNamespaceCtrl" ng-cloak>
+<form name="createNameSpace">
+  <!-- <div layout layout-margin>  -->
+     <!-- div for -->
+    <div layout="column" layout-padding flex>   <!-- div for containing multiple parts like upper form, data  selector, create button -->
+      <!-- <div layout="row" flex layout-padding layout-margin> -->
+         <!--  div for upper form containg name and description -->
+      <md-whiteframe class="md-whiteframe-1dp createNameSpaceWhiteframe" flex layout>
+          <md-input-container flex>
+            <label>Name of NameSpace</label>
+            <input type="text" ng-model="nameSpace.name" name="nameSpace.name" required>
+            <div ng-messages="createNameSpace.nameSpace.name.$error">
+              <div ng-message="required">This is required.</div>
+            </div>
+          </md-input-container>
+
+          <md-input-container flex>
+            <label>Description</label>
+            <input type="text" ng-model="nameSpace.description" required>
+            <div ng-messages="createNameSpace.nameSpace.description.$error">
+              <div ng-message="required">This is required.</div>
+            </div>
+          </md-input-container>
+      </md-whiteframe>
+      <div></div>
+      <md-whiteframe class="md-whiteframe-1dp createNameSpaceWhiteframe">
+        <p>Enter data format for NameSpace</p>
+        <div layout="row" flex><!-- div for various input fields for accepting data fromat -->
+          <md-input-container flex="10">
+            <label>Name</label>
+            <input type="text" ng-model="nameSpace.name" name="nameSpace.name" required>
+            <div ng-messages="createNameSpace.nameSpace.name.$error">
+              <div ng-message="required">This is required.</div>
+            </div>
+          </md-input-container>
+
+          <md-input-container flex-offset="5" flex="10">
+            <label>Field Name</label>
+            <input type="text" ng-model="nameSpace.description" required>
+            <div ng-messages="createNameSpace.nameSpace.description.$error">
+              <div ng-message="required">This is required.</div>
+            </div>
+          </md-input-container>
+          <md-input-container flex-offset="10" flex="20">
+          <label>Field Type</label>
+          </md-input-container>
+          <md-input-container flex-offset="30">
+            <md-button class="md-raised md-primary" ng-click="nameSpace.addDataFormat()">Add</md-button>
+          </md-input-container>
+        </div>
+        <md-input-container flex-offset="30">
+          <md-radio-group ng-model="nameSpace.fieldType" layout="row">
+          <md-radio-button value="description">Description</md-radio-button>
+          <md-radio-button value="measure">Measure</md-radio-button>
+        </md-radio-group>
+      </div>
+        </md-input-container>
+      </md-whiteframe>
+
+        <!-- <div id="createNameSpaceInputBtn" flex="20">
+          <md-button class="md-raised md-primary"
+                     ng-disabled="createNameSpace.nameSpace.name.$dirty && createNameSpace.nameSpace.name.$invalid ||
+                        createNameSpace.nameSpace.description.$dirty && createNameSpace.nameSpace.description.$invalid ||
+                          createNameSpace.nameSpace.jsonFormat.$dirty && createNameSpace.nameSpace.jsonFormat.$invalid"
+                     ng-click="nameSpace.submit()">Create NameSpace</md-button>
+        </div> -->
+    </div>  <!-- div for containing multiple parts like upper form, data  selector, create button -->
+  <!-- </div> -->
+</form>
+</div>
+<!-- <div flex></div> -->
+<!-- <div flex layout-margin >
+<md-content >
+
+</md-content>
+</div> -->

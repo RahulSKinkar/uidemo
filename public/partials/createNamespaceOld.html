@@ -1,0 +1,113 @@
+<div flex ng-controller="createNamespaceCtrl" ng-cloak>
+<form name="createNameSpace">
+  <div layout="column"layout-margin>
+    <div layout="row">
+      <div layout="column" flex="25">
+        <md-input-container>
+          <label>Name of NameSpace</label>
+          <input type="text" ng-model="nameSpace.name" name="nameSpace.name" required>
+          <div ng-messages="createNameSpace.nameSpace.name.$error">
+            <div ng-message="required">This is required.</div>
+            <!-- <div ng-message="md-maxlength">The name has to be less than 30 characters long.</div> -->
+          </div>
+        </md-input-container>
+        <br>
+        <md-input-container>
+          <label>Description</label>
+          <input type="text" ng-model="nameSpace.description" required>
+          <div ng-messages="createNameSpace.nameSpace.description.$error">
+            <div ng-message="required">This is required.</div>
+            <!-- <div ng-message="md-maxlength">The name has to be less than 30 characters long.</div> -->
+          </div>
+        </md-input-container><br>
+        <div id="createNameSpaceInputBtn">
+          <md-button class="md-raised md-primary"
+           ng-disabled="createNameSpace.nameSpace.name.$dirty && createNameSpace.nameSpace.name.$invalid ||
+                        createNameSpace.nameSpace.description.$dirty && createNameSpace.nameSpace.description.$invalid ||
+                          createNameSpace.nameSpace.jsonFormat.$dirty && createNameSpace.nameSpace.jsonFormat.$invalid"
+           ng-click="nameSpace.submit()">Create NameSpace</md-button>
+        </div>
+      </div><!--end div flex 30  -->
+      <div flex></div>
+      <div flex="65" layout-margin >
+        <md-content >
+          <fieldset>
+            <legend>JSON Format structure</legend>
+            <textarea  ng-model="nameSpace.jsonFormat" cols="125" rows="11" required></textarea>
+            <br><br>
+          </fieldset>
+        </md-content>
+      </div><!--end div flex 70  -->
+    </div> <!--end div row  -->
+
+
+    <br><br><br>
+    <div layout="column">
+
+      <fieldset>
+        <legend>Select Dimensions and Measures</legend>
+        <md-content>
+          <!-- <div layout="row" layout-padding layout-margin flex> -->
+            Cards:
+            <br>
+            <!-- <md-grid-list flex md-cols="12" md-row-height="40px" md-gutter="12px">
+               <md-grid-tile md-rowspan="2" md-colspan="1" class="gray" ng-repeat="(key, value) in nameSpace.myJsonString[0]" >
+                  {{key}}
+               </md-grid-tile>
+             </md-grid-list> -->
+            <!-- <md-grid-list flex md-cols="12" md-row-height="40px" md-gutter="12px"  >
+
+               <md-grid-tile md-rowspan="2" md-colspan="1" class="gray" ng-repeat="(key, value) in nameSpace.myJsonString[0]" >
+                  <div layout="column">
+                    <md-card class="purple">
+                      {{key}}
+                    </md-card>
+                    <md-card class="green">
+                      {{value}}
+                    </md-card>
+                  </div>
+               </md-grid-tile>
+             </md-grid-list> -->
+
+
+          <!-- <div layout="row">
+             <div ng-repeat="(key, value) in nameSpace.myJsonString[0]">
+                  <md-button class="md-raised md-primary">{{key}}</md-button>
+                  <md-button class="md-raised md-primary red">{{value}}</md-button>
+             </div>
+          </div> -->
+          <!-- <table >
+          <tr >
+          <md-content>
+          <th id="createNamespaceTable" ng-repeat="(key, value) in nameSpace.myJsonString[0]">{{key}}</th>
+        </md-content>
+      </tr>
+      <tr >
+      <md-content>
+      <td id="createNamespaceTable" ng-repeat="(key, value) in nameSpace.myJsonString[0]">{{value}}</td>
+    </md-content>
+  </tr>
+</table> -->
+          <!-- </div> -->
+          <md-grid-list flex md-cols="12" md-row-height="40px" md-gutter="12px">
+          <md-grid-tile md-rowspan="2" md-colspan="1" class="gray" ng-repeat="(key, value) in nameSpace.myJsonString[0]" >
+          <div layout="column" flex layout-padding layout-margin>
+          <div class="purple">
+          {{key}}
+        </div>
+        <div class="green">
+        {{value}}
+      </div>
+    </div>
+  </md-grid-tile>
+</md-grid-list>
+
+        </md-content>
+      </fieldset>
+    </div>
+
+    </div>
+
+  </div>
+</form>
+</div>

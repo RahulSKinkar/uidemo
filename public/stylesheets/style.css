@@ -1,0 +1,81 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+md-content {
+  background-color: transparent !important;
+ }
+ #createNameSpaceInputBtn{
+   margin-left: 25%;
+ }
+ #createNameSpaceInputBtn button{
+   background-color: teal;
+ }
+ #createNamespaceTable{
+   border:1px solid grey;
+ }
+md-content md-tabs {
+
+    border: 1px solid #e1e1e1; }
+md-content md-tabs md-tabs-wrapper {
+      background-color:teal;}
+md-tabs .md-tab{
+  color:white;
+}
+  md-tabs .md-tab.md-active{
+   color: #d1d1d1;
+   /*border:1px solid #e1e1e1; */
+ }
+ #tabView{
+   /*background-color: #D4E8BE;*/
+   border:1px solid #e1e1e1;
+   /*height:300px;*/
+ }
+
+
+ #noSubscriber{
+   background:#e1e1e1;
+   text-align: center;
+ }
+
+.viewDiv{
+  height:300px;
+}
+/*/*/
+
+ md-grid-list {
+  margin: 8px; }
+ .gray {
+  background: #f5f5f5; }
+ .green {
+     /*display:none;*/
+  background: #b9f6ca; }
+ .yellow {
+  background: #ffff8d; }
+ .blue {
+  background: #84ffff; }
+ .purple {
+  background: #b388ff; }
+ .red {
+  background: #ff8a80; }
+ md-grid-tile {
+  transition: all 400ms ease-out 50ms; }
+
+  md-whiteframe.md-whiteframe-1dp.layout-row.flex{
+    /*display:none;*/
+    background-color:ghostwhite;
+  }
+  .createNameSpaceWhiteframe{
+    background-color:ghostwhite;
+  }
+  #fieldType{
+    padding-top:12px;
+  }
+.createNameSpaceTable{
+  background-color:teal;
+}

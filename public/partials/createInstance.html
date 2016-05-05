@@ -1,0 +1,30 @@
+
+<div flex ng-controller="createInstanceCtrl" ng-cloak>
+<!-- <form name="createInstance" ng-submit="submit()"> -->
+<form name="createInstance" action="/createInstance">
+  <div flex="20" layout="column" layout-padding layout-margin>
+    <md-input-container class="md-block" >
+      <!-- <md-icon md-svg-src = '/images/icons/ic_aspect_ratio_black_24px.svg'></md-icon> -->
+      <!-- <i class="material-icons">face</i> -->
+      <label>Name of Instance</label>
+      <input type="text" ng-model="instance.name">
+    </md-input-container>
+    <md-input-container>
+      <label>IP Address</label>
+      <input type="text" ng-model="instance.ipAddress">
+    </md-input-container>
+    <md-input-container>
+      <label>Description</label>
+      <input type="text" ng-model="instance.description">
+    </md-input-container>
+    <md-input-container>
+      <label>Location</label>
+      <input type="text" ng-model="instance.location">
+    </md-input-container>
+    <div layout="column" layout-align="center center">
+      <input type="submit" value="Create" class="md-raised md-primary"/>
+    </div>
+  </div>
+</form>
+
+</div>

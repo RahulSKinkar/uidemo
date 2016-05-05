@@ -1,0 +1,147 @@
+<div flex ng-controller="createNamespaceCtrl" ng-cloak>
+<form name="createNameSpace" novalidate>
+  <!-- <div layout layout-margin>  -->
+     <!-- div for -->
+    <div layout="column" layout-padding flex>   <!-- div for containing multiple parts like upper form, data  selector, create button -->
+      <!-- <div layout="row" flex layout-padding layout-margin> -->
+         <!--  div for upper form containg name and description -->
+      <md-whiteframe class="md-whiteframe-1dp createNameSpaceWhiteframe" flex layout="column">
+          <!-- <div flex> -->
+            <div  flex layout>
+              <md-input-container flex="30" >
+                <label>Name of NameSpace</label>
+                <input type="text" ng-model="nameSpace.name" name="nameSpace.name" required>
+                <div ng-messages="createNameSpace.nameSpace.name.$error">
+                  <div ng-message="required">This is required.</div>
+                </div>
+              </md-input-container>
+            </div>
+            <!-- <div flex></div> -->
+          <!-- </div> -->
+
+          <div flex layout-padding >
+            <md-input-container flex layout >
+              <label>Description of NameSpace</label>
+            </md-input-container>
+            <!-- <label>Description</label> -->
+            <!-- <input type="text" ng-model="nameSpace.description" required> -->
+            <textarea  ng-model="nameSpace.description" cols="60" rows="3"  required></textarea>
+            <!-- <div ng-messages="createNameSpace.nameSpace.description.$error">
+              <div ng-message="required">This is required.</div>
+            </div> -->
+          </div>
+      </md-whiteframe>
+      <div></div>
+      <md-whiteframe class="md-whiteframe-1dp createNameSpaceWhiteframe" layout-padding>
+        <md-input-container flex layout>
+          <label>Define data schema for NameSpace</label>
+        </md-input-container>
+
+        <div layout="row" flex><!-- div for various input fields for accepting data fromat -->
+          <md-input-container flex="20">
+            <label>Name</label>
+            <input type="text" ng-model="fieldAlias" required>
+            <div ng-messages="createNameSpace.fieldAlias.$error">
+              <div ng-message="required">This is required.</div>
+            </div>
+          </md-input-container>
+
+          <md-input-container flex-offset="5" flex="20">
+            <label>Field Name</label>
+            <input type="text" ng-model="fieldName" required>
+            <div ng-messages="createNameSpace.fieldName.$error">
+              <div ng-message="required">This is required.</div>
+            </div>
+          </md-input-container>
+
+          <md-input-container flex-offset="5" flex="8">
+            <!-- <label>Field Type</label> -->
+              <md-radio-group ng-model="fieldType" class="md-primary" required>
+                <md-radio-button value="dimension">Dimension (differentiates data)</md-radio-button>
+                <md-radio-button value="measure">Measure (measurable field)</md-radio-button>
+              </md-radio-group>
+          </md-input-container>
+          <!-- <md-input-container flex-offset="5" flex="20" id="fieldType">
+            <md-radio-group ng-model="nameSpace.dataFormat.fieldType" layout="row">
+              <md-radio-button value="description">Description</md-radio-button>
+              <md-radio-button value="measure">Measure</md-radio-button>
+            </md-radio-group>
+          </md-input-container> -->
+
+          <md-input-container flex-offset="5">
+            <md-button class="md-raised md-primary" ng-click="addDataFormat()" ng-disabled="createNameSpace.$invalid">Add</md-button>
+          </md-input-container>
+        </div>
+      </md-whiteframe>
+      <div></div>
+      <md-whiteframe class="md-whiteframe-1dp createNameSpaceWhiteframe " flex layout="column" layout-padding>
+        <md-input-container flex layout>
+          <label>Data schema for NameSpace</label>
+        </md-input-container>
+        <!-- <div class="md-small createNameSpaceTable" layout>
+          <div ng-repeat="datacol in nameSpace.keys" flex-offset="5" flex layout="row">
+            <p>{{datacol}}</p>
+          </div>
+        </div> -->
+        <md-content layout="column" flex>
+          <!-- <div layout ng-repeat="schemaField in nameSpace.dataSchema track by schemaField.fieldAlias"flex> -->
+            <!-- <div ng-repeat="datacol in nameSpace.keys" flex-offset="5" flex> -->
+              <!-- {{schemaField.fieldAlias}}
+              <br>
+              {{schemaField.fieldName}}
+              <br>
+              {{schemaField.fieldType}} -->
+            <!-- </div> -->
+            <table border flex layout="column">
+              <thead>
+                <tr flex layout>
+                  <td flex>Alias Name</td>
+                  <td flex>Field Name</td>
+                  <td flex>Field Type</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr flex layout ng-repeat="tableBody in nameSpace.dataSchema">
+                  <td flex>{{tableBody.fieldAlias}}</td>
+                  <td flex>{{tableBody.fieldName}}</td>
+                  <td flex>{{tableBody.fieldType}}</td>
+                </tr>
+              </tbody>
+            </table>
+          <!-- </div> -->
+        </md-content>
+        <div>
+          <p></p>
+        </div>
+
+      </md-whiteframe>
+      <div></div>
+      <md-whiteframe class="md-whiteframe-1dp createNameSpaceWhiteframe " layout layout-align="center center" layout-padding>
+        <md-button class="md-raised md-primary" ng-click="createNamespace()" ng-disabled="createNameSpace.$invalid ">Create</md-button>
+      </md-whiteframe>
+      <!-- <table flex>
+        <thead >
+          <tr >
+            <th ng-repeat="dataHead in dataFormatArray[0]">{{dataHead}}</th>
+          </tr>
+        </thead>
+        <tbody >
+          <tr ng-repeat="dataValues in dataFormatArray track by $index">
+            <td>{{dataValues.name}}</td>
+            <td>{{dataValues.fieldName}}</td>
+            <td>{{dataValues.fieldType}}</td>
+          </tr>
+        </tbody>
+      </table> -->
+
+        <!-- <div id="createNameSpaceInputBtn" flex="20">
+          <md-button class="md-raised md-primary"
+                     ng-disabled="createNameSpace.nameSpace.name.$dirty && createNameSpace.nameSpace.name.$invalid ||
+                        createNameSpace.nameSpace.description.$dirty && createNameSpace.nameSpace.description.$invalid ||
+                          createNameSpace.nameSpace.jsonFormat.$dirty && createNameSpace.nameSpace.jsonFormat.$invalid"
+                     ng-click="nameSpace.submit()">Create NameSpace</md-button>
+        </div> -->
+    </div>  <!-- div for containing multiple parts like upper form, data  selector, create button -->
+
+</form>
+</div>
