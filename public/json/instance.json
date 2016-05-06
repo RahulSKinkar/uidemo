@@ -1,0 +1,34 @@
+[
+  {
+    "namespace":"Apache",
+    "name":"instanceApache1",
+    "ip":"112.223.255.0",
+    "description":"This is the first instance",
+    "location":"India",
+    "security":"done"
+  },
+  {
+    "namespace":"Apache",
+    "name":"instanceApache2",
+    "ip":"112.223.255.0",
+    "description":"This is the second instance",
+    "location":"India",
+    "security":"done"
+  },
+  {
+    "namespace":"Nginx",
+    "name":"instanceNginx1",
+    "ip":"112.223.255.0",
+    "description":"This is the first instance",
+    "location":"India",
+    "security":"done"
+  },
+  {
+    "namespace":"Nginx",
+    "name":"instanceNginx2",
+    "ip":"112.223.255.0",
+    "description":"This is the second instance",
+    "location":"India",
+    "security":"done"
+  }
+]
