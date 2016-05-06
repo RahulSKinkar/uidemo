@@ -79,3 +79,30 @@ md-tabs .md-tab{
 .createNameSpaceTable{
   background-color:teal;
 }
+
+#nameSpaceTable{
+  /*display:none;*/
+  border:1px solid grey;
+}
+
+table {
+  border: 1px solid #D0D3DA;
+  margin: auto;
+}
+
+th {
+  border: 1px solid #D0D3DA;
+  padding: 2px;
+  text-transform: uppercase;
+}
+
+tr {
+  border: 1px solid #D0D3DA;
+  padding: 2px;
+}
+
+td {
+  border: 1px solid #D0D3DA;
+  padding: 2px;
+  text-transform: capitalize;
+}

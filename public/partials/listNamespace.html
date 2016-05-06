@@ -1,10 +1,84 @@
-<div layout="row" class="viewDiv">
+<!-- <div class="listInstance dialogdemoBasicUsage" id="popupContainer">
+
+
+<div layout="row" class="listdemoBasicUsage">
+  <div layout="row" flex="25">
+    <md-content class="listmain" flex>
+    <md-list>
+   <md-content class="listmenu">
+
+      <md-list-item ng-repeat="object in nameSpaceListdata" ui-sref="design.submitInstance.viewInstance({name: '{{object.name}}' })" class="md-2-line"  ng-click="null" ng-show="data.length" >
+<md-item-content layout="row" flex>
+        <div class="md-list-item-text md-tile-left inset" flex="30" >
+          <ng-letter-avatar data={{object.name}} shape="round" avatarcustombgcolor="#339933" charCount=2></ng-letter-avatar>
+        </div>
+        <div flex class="eachnamespc md-tile-content" flex="70">
+          <h3>{{object.name}}</h3>
+          <p>{{object.location}}</p>
+      </div>
+</md-item-content>
+<md-divider></md-divider>
+      </md-list-item>
+      </md-content>
+
+
+    </md-list>
+
+    </md-content>
+  </div>
+
+
+  <div ui-view layout="row" flex="75">
+
+  </div>
+</div>
+</div> -->
+<div layout-padding layout-margin>
+<div layout-padding layout-margin ng-init="loadData()">
+
+    <md-grid-list md-cols="4" md-row-height="8:3" md-gutter="12px" >
+
+      <md-grid-tile ng-repeat="object in nameSpaceListdata" layout layout-padding layout-margin flex>
+        <!-- <div>
+          <ng-letter-avatar data={{object.name}} shape="round" avatarcustombgcolor="#339933" charCount="2"></ng-letter-avatar>
+        </div>
+        <div >
+          <h3>{{object.name}}</h3>
+          <p>Number of datafields:{{object.dataformat.length}}</p>
+        </div> -->
+        <md-card>
+          <md-card-title layout-padding>
+            <md-card-title-media><ng-letter-avatar data={{object.name}} shape="round" avatarcustombgcolor="#339933" charCount="2"></ng-letter-avatar></md-card-title-media>
+            <md-card-title-text><h3>{{object.name}}</h3></md-card-title-text>
+          </md-card-title>
+          <md-card-content><p> Number of datafields: {{object.dataformat.length}}</p></md-card-content>
+        </md-card>
+      </md-grid-tile>
+
+    </md-grid-list>
+
+</div>
+</div>
+<!--
+<md-card>
+  <md-card-title>
+    <md-card-title-text>{{object.name}}</md-card-title-text>
+    <md-card-title-media<ng-letter-avatar data={{object.name}} shape="round" avatarcustombgcolor="#339933" charCount="2"></ng-letter-avatar>md-card-title-media>
+    <md-card-content> Number of datafields:{{object.dataformat.length}}</md-card-content>
+  </md-card-title>
+</md-card> -->
+
+
+
+
+
+<!-- <div layout="row" class="viewDiv">
   <div layout="row">
     <md-grid-list>
 
       <md-grid-tile md-rowspan="3" md-colspan="2">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati autem voluptatibus reprehenderit minus quos iure aliquam veniam consectetur dolores! Ducimus itaque soluta ex, sit tempore accusamus minima nesciunt facere quos.
-        <md-grid-tile-footer>
+        <md-grid-O8tile-footer>
           Lorem ipsum dolor sit amet
         </md-grid-tile-footer>
       </md-grid-tile>
@@ -27,4 +101,8 @@
 
 
   </div>
-</div>
+</div> -->
+
+
+
+  <!-- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias distinctio minus, eaque ratione consectetur doloremque. Quia nemo sint esse dolor possimus, molestias consectetur iure totam odit quas. Consequatur, rerum, delectus. -->
